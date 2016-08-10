@@ -46,7 +46,7 @@ class logToCSV
         $line = $this->__errorObject->getErrorNumber();
         $line .= ",";
         $line .= $this->__errorObject->getErrorText();
-        $Line .= "\n";
+        $line .= "\n";
         file_put_contents(self::CSV_LOCATION, $line, FILE_APPEND);
     }
 }
@@ -81,4 +81,3 @@ $error = new logToCsvAdapter("404:Not Found");
 $log = logToCSV($error);
 $log->write();
 
-?>
